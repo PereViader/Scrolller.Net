@@ -15,7 +15,7 @@ var serviceProvider = new ServiceCollection()
 
 IScrolllerService scrolllerService = serviceProvider.GetRequiredService<IScrolllerService>()
 
-List<Uri> discoverUris = await scrolllerService.ScrapeDiscover(isNsfw: false); //Use scrolllers home page functionality to get either sfw or nsfw assets
+List<Uri> discoverUris = await scrolllerService.Discover(isNsfw: false); //Use scrolllers home page functionality to get either sfw or nsfw assets
 
-List<Uri> subredditUris = await scrolllerService.ScrapeSubreddit("humor"); //Use scrolllers subreddit functionality to get assets from r/humor
+List<Uri> subredditUris = await scrolllerService.Subreddit("humor"); //Use scrolllers subreddit functionality to get assets from r/humor
 ```
