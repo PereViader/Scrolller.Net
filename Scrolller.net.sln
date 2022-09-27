@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PereViader.Scrolller.Test", "src\PereViader.Scrolller.Test\PereViader.Scrolller.Test.csproj", "{D500BF93-0B44-46A2-AC24-7615A919292C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PereViader.Scrolller", "src\PereViader.Scrolller\PereViader.Scrolller.csproj", "{AAB47380-BB80-4A4D-A1D5-6944CE40F1FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D500BF93-0B44-46A2-AC24-7615A919292C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D500BF93-0B44-46A2-AC24-7615A919292C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D500BF93-0B44-46A2-AC24-7615A919292C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D500BF93-0B44-46A2-AC24-7615A919292C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB47380-BB80-4A4D-A1D5-6944CE40F1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB47380-BB80-4A4D-A1D5-6944CE40F1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB47380-BB80-4A4D-A1D5-6944CE40F1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB47380-BB80-4A4D-A1D5-6944CE40F1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B41B2278-F94E-4FEB-AE05-8362136D2AC5}
+	EndGlobalSection
+EndGlobal
