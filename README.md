@@ -1,3 +1,5 @@
+[![Run tests](https://github.com/PereViader/Scrolller.Net/actions/workflows/RunTests.yml/badge.svg)](https://github.com/PereViader/Scrolller.Net/actions/workflows/RunTests.yml)
+
 # Scrolller.Net
 
 Use this library to get any sfw/nsfw images/videos from https://www.scrolller.com
