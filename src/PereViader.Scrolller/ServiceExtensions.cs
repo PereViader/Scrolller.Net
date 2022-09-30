@@ -30,9 +30,7 @@ public static class ServiceExtensions
             });
         
         serviceCollection.AddTransient<IScrolllerService, ScrolllerService>();
-        serviceCollection.AddTransient<IStreamingScrolllerService, StreamingScrolllerService>();
-        serviceCollection.AddSingleton<DiscoverScrolllerExtractor>();
-        serviceCollection.AddSingleton<SubredditScrolllerExtractor>();
+        
         return serviceCollection;
     }
 }

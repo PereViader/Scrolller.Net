@@ -22,8 +22,7 @@ public class TestScrolllerService
     public async Task ScrapeSubreddit_ShouldScrapeSomeUrls(string subreddit)
     {
         var assets = await scrolllerService!.Subreddit(subreddit);
-        Assert.That(assets.Count > 0);
-        Assert.That(assets, Is.All.Matches<Uri>(x => x.Scheme == Uri.UriSchemeHttps));
+        Assert.That(assets.Items, Is.Not.Empty);
     }
 
     [Test]
@@ -32,7 +31,6 @@ public class TestScrolllerService
     public async Task ScrapeDiscover_ShouldScrapeSomeUrls(bool isNsfw)
     {
         var assets = await scrolllerService!.Discover(isNsfw);
-        Assert.That(assets.Count > 0);
-        Assert.That(assets, Is.All.Matches<Uri>(x => x.Scheme == Uri.UriSchemeHttps));
+        Assert.That(assets.Items, Is.Not.Empty);
     }
 }

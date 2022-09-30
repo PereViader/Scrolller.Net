@@ -2,7 +2,7 @@ namespace PereViader.Scrolller.Responses;
 
 public record PagedScrolllerResponse<T>
 {
-    public string? Iterator { get; set; }
+    public string? Iterator { get; init; }
 
-    public List<T> Items { get; set; } = new List<T>();
+    public List<T> Items { get; init; } = new();
 }

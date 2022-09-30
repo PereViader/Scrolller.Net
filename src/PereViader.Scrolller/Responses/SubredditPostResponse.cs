@@ -2,9 +2,9 @@ namespace PereViader.Scrolller.Responses;
 
 public record SubredditPostResponse
 {
-    public long Id { get; set; }
-    public string? RedditPath { get; set; }
-    public string? Url { get; set; }
-    public string? Title { get; set; }
-    public List<MediaInfoResponse> MediaSources { get; set; }
+    public long Id { get; init; }
+    public string? RedditPath { get; init; }
+    public string? Url { get; init; }
+    public string? Title { get; init; }
+    public List<MediaInfoResponse> MediaSources { get; init; }
 }
