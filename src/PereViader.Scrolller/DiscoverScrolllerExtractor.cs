@@ -4,8 +4,6 @@ namespace PereViader.Scrolller;
 
 public class DiscoverScrolllerExtractor : IScrolllerExtractor<List<Uri>>
 {
-    public static DiscoverScrolllerExtractor Instance { get; } = new DiscoverScrolllerExtractor();
-
     public List<Uri> Extract(JsonDocument jsonDocument)
     {
         var list = new List<Uri>();

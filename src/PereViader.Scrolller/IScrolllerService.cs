@@ -2,7 +2,6 @@
 
 public interface IScrolllerService
 {
-    Task<List<Uri>> Discover(bool isNsfw);
-    Task<List<Uri>> Subreddit(string subreddit);
-    Task<T> Scrape<T>(string request, IScrolllerExtractor<T> extractor);
+    Task<List<Uri>> Discover(bool isNsfw, string? iterator = null, CancellationToken ctx = default);
+    Task<List<Uri>> Subreddit(string subreddit, string? iterator = null, CancellationToken ctx = default);
 }

@@ -10,7 +10,7 @@ public class TestScrolllerService
     public void Setup()
     {
         var serviceProvider = new ServiceCollection()
-            .UseScrolller()
+            .AddScrolller()
             .BuildServiceProvider();
 
         scrolllerService = serviceProvider.GetRequiredService<IScrolllerService>();

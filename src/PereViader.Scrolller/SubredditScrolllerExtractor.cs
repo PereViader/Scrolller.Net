@@ -4,8 +4,6 @@ namespace PereViader.Scrolller;
 
 public class SubredditScrolllerExtractor : IScrolllerExtractor<List<Uri>>
 {
-    public static SubredditScrolllerExtractor Instance { get; } = new SubredditScrolllerExtractor();
-
     public List<Uri> Extract(JsonDocument jsonDocument)
     {
         var list = new List<Uri>();
