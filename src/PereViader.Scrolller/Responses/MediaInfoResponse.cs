@@ -1,4 +1,4 @@
-namespace PereViader.Scrolller;
+namespace PereViader.Scrolller.Responses;
 
 public record MediaInfoResponse
 {

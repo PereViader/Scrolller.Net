@@ -1,3 +1,5 @@
+using PereViader.Scrolller.Responses;
+
 namespace PereViader.Scrolller;
 
 public interface IStreamingScrolllerService
