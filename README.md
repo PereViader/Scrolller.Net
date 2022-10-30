@@ -12,12 +12,29 @@ Assets returned will be links to photos/videos/gifs
 
 ```
 var serviceProvider = new ServiceCollection()
-    .UseScrolller()
+    .AddScrolller()
     .BuildServiceProvider();
 
-IScrolllerService scrolllerService = serviceProvider.GetRequiredService<IScrolllerService>()
+IScrolllerService scrolllerService = serviceProvider.GetRequiredService<IScrolllerService>();
 
-List<Uri> discoverUris = await scrolllerService.Discover(isNsfw: false); //Use scrolllers home page functionality to get either sfw or nsfw assets
 
-List<Uri> subredditUris = await scrolllerService.Subreddit("humor"); //Use scrolllers subreddit functionality to get assets from r/humor
+//Use scrolllers discover functionality to get either sfw or nsfw assets
+List<Uri> discoverUris = await scrolllerService.Discover(isNsfw: false);
+
+
+//Use scrolllers subreddit functionality to get assets from the desired subreddit
+List<Uri> subredditUris = await scrolllerService.Subreddit("pics"); 
+
+
+//AsyncEnumerable methods also provided to allow the retrieval of multiple scrolller pages using an iterator to paginate the results internally
+var subredditStream = _streamingScrolller.DiscoverStream(isNsfw: false)
+    .Take(3); //Take 3 scrolller pages
+
+await foreach (var subreddits in subredditStream)
+{
+    foreach(var item in subreddits.Items)
+    {
+        Console.WriteLine(item);
+    }
+}
 ```
