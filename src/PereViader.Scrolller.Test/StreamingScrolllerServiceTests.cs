@@ -27,10 +27,14 @@ public class StreamingScrolllerServiceTests
         var subredditStream = _streamingScrolller.SubredditStream(subreddit, null, _tokenSource.Token)
             .Take(MAX_PAGES);
 
+        var pageCount = 0;
         await foreach (var subredditPosts in subredditStream)
         {
+            pageCount++;
             Assert.That(subredditPosts.Items, Is.Not.Empty);
         }
+
+        Assert.That(pageCount, Is.EqualTo(MAX_PAGES));
     }
     
     [Test]
@@ -41,9 +45,13 @@ public class StreamingScrolllerServiceTests
         var subredditStream = _streamingScrolller.DiscoverStream(isNsfw, null, _tokenSource.Token)
             .Take(MAX_PAGES);
 
+        var pageCount = 0;
         await foreach (var subreddits in subredditStream)
         {
+            pageCount++;
             Assert.That(subreddits.Items, Is.Not.Empty);
         }
+
+        Assert.That(pageCount, Is.EqualTo(MAX_PAGES));
     }
 }
