@@ -20,29 +20,17 @@ public class StreamingScrolllerServiceTests
     }
 
     [Test]
-    [TestCase("humor")]
+    [TestCase("pics")]
     [TestCase("nsfw")]
     public async Task ScrapeSubredditPosts_ShouldScrapeAll(string subreddit)
     {
-        var pageNum = 0;
-        var subredditStream = _streamingScrolller.SubredditStream(subreddit, null, _tokenSource.Token);
+        var subredditStream = _streamingScrolller.SubredditStream(subreddit, null, _tokenSource.Token)
+            .Take(MAX_PAGES);
+
         await foreach (var subredditPosts in subredditStream)
         {
-            if (string.IsNullOrWhiteSpace(subredditPosts.Iterator))
-            {
-                Assert.That(subredditPosts.Items, Is.Empty);
-            }
-            else
-            {
-                Assert.That(subredditPosts.Items, Is.Not.Empty);
-            }
-            
-            pageNum++;
-            if (pageNum >= MAX_PAGES)
-                break;
+            Assert.That(subredditPosts.Items, Is.Not.Empty);
         }
-        
-        Assert.That(pageNum, Is.GreaterThan(0));
     }
     
     [Test]
@@ -50,24 +38,12 @@ public class StreamingScrolllerServiceTests
     [TestCase(false)]
     public async Task ScrapeDiscover_ShouldScrapeAll(bool isNsfw)
     {
-        var pageNum = 0;
-        var subredditStream = _streamingScrolller.DiscoverStream(isNsfw, null, _tokenSource.Token);
+        var subredditStream = _streamingScrolller.DiscoverStream(isNsfw, null, _tokenSource.Token)
+            .Take(MAX_PAGES);
+
         await foreach (var subreddits in subredditStream)
         {
-            if (string.IsNullOrWhiteSpace(subreddits.Iterator))
-            {
-                Assert.That(subreddits.Items, Is.Empty);
-            }
-            else
-            {
-                Assert.That(subreddits.Items, Is.Not.Empty);
-            }
-            
-            pageNum++;
-            if (pageNum >= MAX_PAGES)
-                break;
+            Assert.That(subreddits.Items, Is.Not.Empty);
         }
-        
-        Assert.That(pageNum, Is.GreaterThan(0));
     }
 }
