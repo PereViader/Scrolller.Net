@@ -10,7 +10,7 @@ Bindings for microsoft's dependency injection library provided.
 Assets returned will be links to photos/videos/gifs
 
 
-```
+```csharp
 var serviceProvider = new ServiceCollection()
     .AddScrolller()
     .BuildServiceProvider();
